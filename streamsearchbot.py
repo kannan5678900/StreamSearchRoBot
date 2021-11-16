@@ -141,7 +141,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     testinput = event.pattern_match.group(1)
     starkisnub = urllib.parse.quote_plus(testinput)
     results = []
-    search = f"http://starkmusic.herokuapp.com/result/?query={starkisnub}"
+    search = f"http://starkmusic.herokuapp.com/result/?query={starkisnub}&lyrics=true"
     seds = requests.get(url=search).json()
     for okz in seds:
         fine = okz['album']
@@ -151,8 +151,8 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         hmm = okz['duration']
         langs = okz['language']
         hidden_url = okz['media_url']
-        okayz = (f"**Song Name :** `{okmusic}` \n**Singer :** `{singer}` \n**Song Url :** `{hmmstar}`"
-                 f"\n**Language :** `{langs}` \n**Download Able Url :** `{hidden_url}`"
+        okayz = (f"**Song Name :** `{okmusic}` \n**Singer :** `{singer}` \n**Song Url :** {hmmstar}"
+                 f"\n**Language :** `{langs}` \n**Download Able Url :** {hidden_url}"
                  f"\n**Duration :** `{hmm}`")
         hmmkek = f'Song : {okmusic} Singer : {singer} Duration : {hmm} \nLanguage : {langs}'
         results.append(await event.builder.article(
