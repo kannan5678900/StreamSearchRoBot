@@ -78,13 +78,13 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                                )
     else:
         for sedz in okpro:
-            seds = sedz["age"]
-            okpros = sedz["leecher"]
-            sadstark = sedz["magnet"]
-            okiknow = sedz["name"]
-            starksize = sedz["size"]
-            starky = sedz["type"]
-            seeders = sedz["seeder"]
+            seds = sedz(['age'])
+            okpros = sedz['leecher']
+            sadstark = sedz['magnet']
+            okiknow = sedz['name']
+            starksize = sedz['size']
+            starky = sedz['type']
+            seeders = sedz['seeder']
             okayz = (f"**Title :** `{okiknow}` \n**Size :** `{starksize}` \n**Type :** `{starky}` \n**Seeder :** `{seeders}` \n**Leecher :** `{okpros}` \n**Magnet :** `{sadstark}` ")
             sedme = f"Size : {starksize} Type : {starky} Age : {seds}"
             results.append(await event.builder.article(
