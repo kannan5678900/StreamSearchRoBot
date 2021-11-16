@@ -78,7 +78,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                                )
     else:
         for sedz in okpro:
-            seds = sedz(['age'])
+            seds = sedz['age']
             okpros = sedz['leecher']
             sadstark = sedz['magnet']
             okiknow = sedz['name']
